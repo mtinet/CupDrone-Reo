@@ -865,6 +865,7 @@ void serialize8(uint8_t a) {
     if (t == serialHeadTX[0]) UCSR0B &= ~(1<<UDRIE0); // Check if all data is transmitted . if yes disable transmitter UDRE interrupt
   }
 #endif
+
 #if defined(MEGA) || defined(PROMICRO)
   ISR(USART1_UDRE_vect) { // Serial 1 on a MEGA or on a PROMICRO
     uint8_t t = serialTailTX[1];
@@ -876,6 +877,7 @@ void serialize8(uint8_t a) {
     if (t == serialHeadTX[1]) UCSR1B &= ~(1<<UDRIE1);
   }
 #endif
+
 #if defined(MEGA)
   ISR(USART2_UDRE_vect) { // Serial 2 on a MEGA
     uint8_t t = serialTailTX[2];
