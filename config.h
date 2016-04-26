@@ -454,7 +454,7 @@
 
     /***********************      Promicro version related     ****************************/
       /* Inverted status LED for Promicro ver 10 */
-      //#define PROMICRO10
+      //#define PROMICRO  10
 
 
   /**************************************************************************************/

@@ -1323,7 +1323,8 @@
 
 #if defined(CupDrone_Reo)
   #define MPU6050
-  #define MS561101BA 
+  //#define BMP085     // CupDrone_STM 1.5
+  #define MS561101BA   // CupDrone_STM 2.0
   #define HMC5883
   
   #define ACC_ORIENTATION(X, Y, Z)  {accADC[PITCH]  = -X; accADC[ROLL]  =  Y; accADC[YAW]  =   Z;}
