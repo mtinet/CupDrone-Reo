@@ -18,9 +18,34 @@ void loop() {
   delay(1000);
 }
 
+// all motor
 void motorSpeed_update(int motorSpeed) {
   analogWrite(frontLeft, motorSpeed);
   analogWrite(frontRight, motorSpeed);
   analogWrite(rearRight, motorSpeed);
   analogWrite(rearLeft, motorSpeed); 
+}
+
+// pitch(forward)
+void motorSpeed_update(int motorSpeed) {
+  analogWrite(frontLeft, 0);
+  analogWrite(frontRight, 0);
+  analogWrite(rearRight, motorSpeed);
+  analogWrite(rearLeft, motorSpeed); 
+}
+
+// roll(left)
+void motorSpeed_update(int motorSpeed) {
+  analogWrite(frontLeft, 0);
+  analogWrite(frontRight, motorSpeed);
+  analogWrite(rearRight, motorSpeed);
+  analogWrite(rearLeft, 0); 
+}
+
+// yaw(Counter ClockWise)
+void motorSpeed_update(int motorSpeed) {
+  analogWrite(frontLeft, motorSpeed);
+  analogWrite(frontRight, 0);
+  analogWrite(rearRight, motorSpeed);
+  analogWrite(rearLeft, 0); 
 }
