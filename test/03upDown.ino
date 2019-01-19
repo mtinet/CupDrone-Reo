@@ -3,19 +3,42 @@
 #define rearRight 9
 #define rearLeft 5
 
+int input;
+int userSpeed;
+
 void setup() {
   Serial.begin(9600);
 }
 
 void loop() {
-  int userSpeed = 0;
-
   if(Serial.available() > 0) {
-    userSpeed = Serial.read();
+    input = Serial.read();
+    if(input == 48) {
+      Serial.println(userSpeed);
+      userSpeed = 0;
+    }
+    if(input == 49) {
+      Serial.println(userSpeed);
+      userSpeed = 10;
+    }
+    if(input == 50) {
+      Serial.println(userSpeed);
+      userSpeed = 50;
+    }
+    if(input == 51) {
+      Serial.println(userSpeed);
+      userSpeed = 100;
+    }
+    if(input == 52) {
+      Serial.println(userSpeed);
+      userSpeed = 150;
+    }
+    if(input == 53) {
+      Serial.println(userSpeed);
+      userSpeed = 255;
+    }
+    motorSpeed_update(userSpeed);
   }
-
-  motorSpeed_update(userSpeed);
-  delay(1000);
 }
 
 // all motor
